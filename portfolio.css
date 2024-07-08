@@ -1,0 +1,790 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+
+
+
+@keyframes index-animation {
+  0%, 90% {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@keyframes animation02 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animation03 {
+  0% {
+    transform: scale3d(1, 0, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+@keyframes animation04 {
+  0% {
+    transform: scale3d(0, 0, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+@keyframes page-animation {
+  0% {
+    transform: translateY(-200vh);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+    visibility: hidden
+  }
+}
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+ padding-top: -100em;
+  }
+  100% {
+ padding-top: 10em;
+   opacity: 1;
+  }
+}
+
+
+@keyframes bg01 {
+  to {
+    transform: rotate(1turn)
+  }
+}
+@keyframes bg02 {
+  from {
+    transform: translateY(100%) rotate(360deg);
+  }
+  to {
+    transform: translateY(calc(-100vh + -100%)) rotate(0deg);
+  }
+}
+:root {
+  font-size: 0.6vw;
+  --custom01: #671cff;
+  --custom02: #f6f6f6;
+  --custom03: rgba(0, 0, 0, 0.3);
+  --custom04: #999;
+  --custom05: #fff;
+}
+html {
+  height: 100%;
+}
+body {
+  scroll-behavior: smooth;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+* {
+  margin: auto;
+  padding: 0;
+  list-style: none;
+  vertical-align: middle;
+}
+img {
+  max-width: 100%;
+  display: inline-block;
+  margin: 1%;
+}
+a {
+  text-decoration: none;
+}
+.page-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 666;
+}
+.page-animation div:nth-of-type(1) {
+  width: 100%;
+  height: 100%;
+  background: var(--custom01);
+}
+.page-animation div:nth-of-type(2) {
+  width: 100%;
+  height: 25%;
+  background: var(--custom05);
+}
+.page-animation div:nth-of-type(3) {
+  width: 100%;
+  height: 25%;
+  background: var(--custom01);
+}
+.page-animation div:nth-of-type(4) {
+  width: 100%;
+  height: 25%;
+  background: var(--custom05);
+}
+.page-animation div:nth-of-type(5) {
+  width: 100%;
+  height: 25%;
+  background: var(--custom01);
+}
+.bg01 div {
+  width: 100%;
+  height: 100%;
+  border: 0.1em solid var(--custom03);
+  border-top-color: var(--custom01);
+  animation: bg01 40s infinite;
+}
+#index a {
+  overflow: hidden;
+  position: relative;
+  height: 4em;
+  width: 4em;
+  background-size: cover;
+  background-position: top;
+  transition: all 0.3s;
+  min-height: auto;
+  /*! transform: scale(0.8); */
+  z-index: 2;
+  opacity: 0.7;
+  /*! border-radius: 50%; */
+  margin: 1em;
+}
+#index a:hover {
+  transform: rotate(0) scale(1.2);
+  opacity: 1;
+}
+#index nav {
+  background: var(--custom01);
+  /*! padding: 10em; */
+  display: flex;
+  /*! width: 100%; */
+  justify-content: left;
+  flex-wrap: wrap;
+  align-items: center;
+  /*! margin-left: 1em; */
+  opacity: 0.9;
+}
+.index-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 6;
+  animation: index-animation 8.5s forwards;
+}
+.bg01, .bg02 {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.bg02 div {
+  animation: bg02 15s infinite;
+  align-self: flex-end;
+  border-bottom: 1em solid var(--custom01);
+  border-right: 1em solid transparent;
+  border-left: 1em solid transparent;
+  transform: translateY(100%);
+  margin: 0 auto;
+}
+.bg02 div:nth-child(2) {
+  font-size: 4em;
+  animation-delay: 1s;
+  animation-duration: 17s;
+  opacity: 0.6
+}
+.bg02 div:nth-child(3) {
+  font-size: 5em;
+  animation-delay: 1.5s;
+  animation-duration: 8s;
+
+}
+.bg02 div:nth-child(4) {
+  font-size: 7em;
+  animation-delay: 0.5s;
+  animation-duration: 13s;
+}
+.bg02 div:nth-child(5) {
+  font-size: 5em;
+  animation-delay: 4s;
+  animation-duration: 11s;
+  opacity: 0.3
+}
+.bg02 div:nth-child(6) {
+  font-size: 2em;
+  animation-delay: 2s;
+  animation-duration: 9s;
+}
+.bg02 div:nth-child(7) {
+  font-size: 4em;
+  animation-duration: 12s;
+  opacity: 0.8
+}
+.bg02 div:nth-child(8) {
+  font-size: 3em;
+  animation-delay: 5s;
+  animation-duration: 18s;
+}
+.bg02 div:nth-child(9) {
+  font-size: 5em;
+  animation-duration: 9s;
+  opacity: 0.6
+}
+#index a dd {
+  display: none;
+  letter-spacing: 0.1em;
+  line-height: 180%;
+  position: absolute;
+  top: 0;
+}
+#index a dt {
+  display: block;
+  height: 16em;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 16em;
+}
+.gallery {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gallery > div, .gallery > a {
+  background-size: contain;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70em;
+  margin: 3em 0;
+}
+.gallery > a {
+  transform: scale(0.9);
+  transition: 1s;
+}
+.gallery > a:hover {
+  transform: scale(1);
+}
+.additional {
+  color: var(--custom04);
+  box-sizing: border-box;
+  width: 80%;
+  margin: 6em auto;
+  letter-spacing: 0.2em;
+}
+.additional h3 {
+  background: var(--custom01);
+  text-transform: uppercase;
+  font-size: 0.9em;
+  margin-bottom: 5em;
+  display: inline-block;
+  color: var(--custom05);
+  padding: 0.8em 2em;
+  font-weight: normal;
+  line-height: 3;
+  border: 0.4em double var(--custom05);
+  letter-spacing: 0.2em;
+}
+.additional h2 {
+  font-size: 120%;
+  line-height: 2;
+}
+.additional h1 {
+  color: var(--custom01);
+  font-size: 2em;
+  line-height: 220%;
+}
+.additional > dl {
+  margin-top: 5em;
+  margin-left: 0;
+}
+.additional > dl > dt {
+  font-size: 1.2em;
+  border-bottom: 0.5em solid var(--custom01);
+  text-transform: uppercase;
+  margin-bottom: 2em;
+  display: inline-block;
+  color: var(--custom01);
+  font-weight: normal;
+  line-height: 3;
+}
+.additional > dl > dd {
+  margin-left: 0;
+  width: 100%;
+}
+.additional span {
+  margin-bottom: 1em;
+  display: inline-block;
+  padding: 1em 2em;
+  color: var(--custom01);
+  background-color: var(--custom02);
+}
+.additional > dl img {
+  width: 4em;
+  margin-right: 1em;
+  display: inline-block;
+}
+.scale dl {
+  margin-bottom: 2em;
+}
+.scale dl dt {
+  display: inline-block;
+  width: 10em;
+}
+.scale dl dd {
+  display: inline-block;
+}
+input[type="radio"] {
+  display: none
+}
+.coverflow label {
+  cursor: pointer;
+  display: inline-block;
+  width: 18em;
+  height: 100%;
+  background-size: cover;
+  transition: 0.3s;
+}
+.coverflow label:hover:before {
+  opacity: 0;
+}
+.close {
+  position: fixed;
+  width: 8em;
+  height: 8em;
+  display: inline-block;
+  right: 2em;
+  top: 2em;
+  transform: scale(0.8) rotate(0deg);
+}
+.next:hover, .prev:hover {
+  transform: scale(1.5);
+}
+.close::before, .close::after {
+  background-color: var(--custom01);
+  content: "";
+  display: block;
+  height: 0.1em;
+  position: absolute;
+  transform-origin: center left;
+  width: 11em;
+  transform: rotate(45deg);
+  top: 0;
+  left: 0;
+}
+.close::after {
+  transform: rotate(-45deg);
+  left: auto;
+  top: auto;
+  bottom: 0;
+}
+.next:before {
+  transform: rotate(140deg);
+  content: "";
+  display: block;
+  width: 3em;
+  height: 3em;
+  border-top: 0.5em solid var(--custom05);
+  border-left: 0.5em solid var(--custom05);
+  margin-top: 3em;
+  margin-left: 2em;
+}
+.prev:before {
+  transform: rotate(-45deg);
+  content: "";
+  display: block;
+  width: 3em;
+  height: 3em;
+  margin-top: 3em;
+  margin-left: 3.5em;
+  border-top: 0.5em solid var(--custom01);
+  border-left: 0.5em solid var(--custom01);
+}
+.prev, .next {
+  position: fixed;
+  display: inline-block;
+  width: 9em;
+  height: 9em;
+  top: 50%;
+  border: none;
+  left: 0;
+  margin-top: -4.5em;
+}
+.next {
+  left: auto;
+  right: 0;
+}
+
+
+
+body > section {
+  display: none;
+  z-index: 4;
+  position: relative;
+  /*! margin-top: 10em; */
+}
+
+
+
+
+.container {
+  opacity: 0;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+.container:after {
+  content: "";
+  z-index: -33;
+  width: 300em;
+  height: 300em;
+  background: var(--custom01);
+  position: fixed;
+  right: -230em;
+  display: block;
+  transform: rotate(-45deg) translateX(0%);
+}
+section nav {
+  z-index: 555;
+  margin: 0;
+}
+
+
+
+
+#page01 img, #page03 img{
+  width: 45%;
+}
+
+
+
+#page02 img, #page04 img, #page05 img, #page06 img, #page07 img  {
+  width: 30%;
+}
+.img01 {
+  background-image: url(img/001.jpg);
+}
+.img02 {
+  background-image: url("img/017.png");
+}
+.img03 {
+  background-image: url("img/026.png");
+}
+.img04 {
+  background-image: url(img/143.webp);
+}
+.img05 {
+  background-image: url("img/058.png");
+}
+
+.img06 {
+  background-image: url("img/201.webp");
+}
+.img07 {
+  background-image: url("img/205.webp");
+}
+.img07-02 {
+  background-image: url("img/07-02.webp");
+}
+.img08 {
+  background-image: url("img/08.png");
+}
+.img09 {
+  background-image: url("img/09.png");
+}
+.img09-02 {
+  background-image: url("img/09-02.png");
+}
+.img09-03 {
+  background-image: url("img/09-03.png");
+}
+.img09-04 {
+  background-image: url("img/09-04.png");
+}
+.img10 {
+  background-image: url("img/10.png");
+}
+.img10-02 {
+  background-image: url("img/10-02.png");
+}
+.img10-03 {
+  background-image: url("img/10-03.png");
+}
+.img10-04 {
+  background-image: url("img/10-04.png");
+}
+.img10-05 {
+  background-image: url("img/10-05.png");
+}
+.img11 {
+  background-image: url("img/11.webp");
+}
+.img11-02 {
+  background-image: url("img/11-02.webp");
+}
+.img12 {
+  background-image: url("img/12.png");
+}
+.img12-02 {
+  background-image: url("img/12-02.png");
+}
+.close:hover {
+  transform: scale(1) rotate(90deg);
+}
+.prev, .next, .close {
+  transition: 0.3s all
+}
+.coverflow label:before {
+  width: 100%;
+  height: 100%;
+  background: var(--custom01);
+  content: "";
+  z-index: 1;
+  position: relative;
+  display: block;
+  opacity: 0.7;
+}
+.coverflow label:hover {
+  width: 33em;
+}
+.animation02 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.animation02 div {
+  position: absolute;
+  top: calc((50% - 140em));
+  left: calc((50% - 140em));
+  width: 280em;
+  height: 280em;
+  border-radius: 50%;
+  transform: scale(0);
+}
+.animation02 div:nth-child(1) {
+  background: var(--custom01);
+  animation: animation02 0.5s 3s forwards;
+}
+.animation02 div:nth-child(2) {
+  background: var(--custom05);
+  animation: animation02 0.5s 4s forwards;
+}
+.animation02 div:nth-child(3) {
+  background: var(--custom01);
+  animation: animation02 0.5s 5s forwards;
+}
+.animation03 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.animation03 div {
+  width: 20%;
+  height: 100%;
+  animation: animation03 0.3s 6s forwards;
+  transform-origin: bottom;
+  opacity: 0;
+  background-color: var(--custom05);
+}
+.animation03 div:nth-child(1) {
+  animation-delay: 6.4s;
+}
+.animation03 div:nth-child(2) {
+  animation-delay: 6.3s;
+}
+.animation03 div:nth-child(3) {
+  animation-delay: 6.2s;
+}
+.animation03 div:nth-child(4) {
+  animation-delay: 6.1s;
+}
+.animation04 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.animation04 div {
+  position: absolute;
+  width: 0;
+  height: 0;
+  animation: animation04 1s 6.7s forwards;
+  opacity: 0;
+}
+.animation04 div:nth-child(1) {
+  top: 0;
+  left: 0;
+  border-top: 100vh solid transparent;
+  border-right: 100vw solid var(--custom01);
+  transform-origin: bottom right;
+}
+.animation04 div:nth-child(2) {
+  right: 0;
+  bottom: 0;
+  border-bottom: 100vh solid transparent;
+  border-left: 100vw solid var(--custom01);
+  transform-origin: top left;
+}
+
+
+
+body > section:target ~ .bg {
+  opacity: 0.2;
+  /*! z-index: 111; */
+}
+
+
+
+
+
+#index {
+ display:none
+}
+
+body > section:target ~ #index {
+ display: block; 
+  z-index: 555;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+
+body > section:target ~ .index-animation, #index:target ~ .index-animation {
+  display: none;
+}
+
+
+body > section:target {
+  display: block;
+  /*! padding-top: 10em; */
+}
+
+
+
+
+
+#page01 .container, 
+body > section:target .container {
+  animation: fade 0.5s 0.5s forwards;
+}
+
+
+body > section:target ~ .page-animation {
+  display: block;
+  animation: page-animation 2s forwards;
+}
+@media (orientation: portrait) {
+  body {
+    font-size: 2.2vw;
+    height: auto;
+  }
+  .gallery > div, .gallery > a {
+    height: 40em;
+    margin: auto;
+  }
+  .container {
+    display: block;
+    background: none;
+    /*! margin-bottom: 6em;
+         */
+  }
+  .gallery {
+    float: none;
+    display: flex;
+    width: 99%;
+    position: relative;
+    margin-right: auto;
+    height: auto;
+  }
+  .left:before {
+    left: 10em;
+  }
+  .additional {
+    margin: auto;
+    width: 99%;
+    padding: 4em;
+  }
+  .close::before, .close::after {
+    background-color: var(--custom05);
+  }
+  .close {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+  section nav {
+    background: var(--custom01);
+    width: 100%;
+    text-align: left;
+    position: fixed;
+    padding: 1em 4em;
+    bottom: 0;
+    font-size: 60%;
+    box-sizing: border-box;
+    display: flex;
+    opacity: 0.9;
+    display: none;
+  }
+  .next, .prev {
+    position: relative;
+    margin: auto;
+  }
+  .prev:before {
+    border-top: 0.5em solid var(--custom05);
+    border-left: 0.5em solid var(--custom05);
+  }
+  .coverflow label:hover {
+    width: 22.5em;
+  }
+  .coverflow label {
+    width: 9em;
+  }
+  .container:after {
+    left: 60em
+  }
+  body > section {
+    padding-bottom: 7em;
+  }
+}
